@@ -24,9 +24,9 @@ func CreateCheckout(prices map[string]int, deals *pricing.DealStore) Checkout {
 func (c *Checkout) Scan(item string) {
 	if _, ok := c.prices[item]; ok {
 		c.basket = append(c.basket, item)
-		fmt.Println(c.basket)
+		fmt.Println("OK")
 	} else {
-		fmt.Printf("Unknown item %s", item)
+		fmt.Printf("Unknown item %s\n", item)
 	}
 }
 

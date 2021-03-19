@@ -1,8 +1,8 @@
 package scanner
 
 import (
-	"checkout/pricing"
 	"fmt"
+	"github.com/Thustle/checkout/pricing"
 )
 
 // Interface to adhere to
@@ -13,7 +13,7 @@ type ICheckout interface {
 
 type Checkout struct {
 	prices map[string]int
-	deals *pricing.DealStore
+	deals  *pricing.DealStore
 	basket []string
 }
 

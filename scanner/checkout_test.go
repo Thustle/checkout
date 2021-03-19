@@ -1,19 +1,19 @@
 package scanner
 
 import (
-	"checkout/pricing"
 	"fmt"
+	"github.com/Thustle/checkout/pricing"
 	"reflect"
 	"testing"
 )
 
 type checkoutTest struct {
-	skus []string
+	skus          []string
 	expectedTotal int
 }
 
 func getCheckoutTests() []checkoutTest {
-	return []checkoutTest {
+	return []checkoutTest{
 		{[]string{"A"}, 50},
 		{[]string{"A", "A", "A"}, 130},
 		{[]string{"A", "A", "A", "A"}, 180},
@@ -26,7 +26,7 @@ func getCheckoutTests() []checkoutTest {
 }
 
 func setupCheckout() Checkout {
-	prices := map[string]int {
+	prices := map[string]int{
 		"A": 50,
 		"B": 30,
 		"C": 20,
@@ -43,7 +43,7 @@ func setupCheckout() Checkout {
 func TestCheckout(t *testing.T) {
 	for _, test := range getCheckoutTests() {
 		t.Run(fmt.Sprintf("expected %d", test.expectedTotal), func(t *testing.T) {
-  		checkout := setupCheckout()
+			checkout := setupCheckout()
 			for _, scan := range test.skus {
 				checkout.Scan(scan)
 			}

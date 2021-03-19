@@ -2,9 +2,9 @@ package main
 
 import (
 	"bufio"
-	"checkout/pricing"
-	"checkout/scanner"
 	"fmt"
+	"github.com/Thustle/checkout/pricing"
+	"github.com/Thustle/checkout/scanner"
 	"log"
 	"os"
 )
@@ -43,7 +43,7 @@ func getCheckoutScanner() scanner.Checkout {
 
 	file, err = os.Open(pricesFile)
 	if err != nil {
-		log.Fatalln("Could not open deals file", err)
+		log.Fatalln("Could not open prices file", err)
 	}
 	prices, err := pricing.LoadPrices(file)
 	if err != nil {

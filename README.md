@@ -18,7 +18,12 @@ see the total.
 
 ```mermaid
 stateDiagram-v2
-    [*] --> PROSPECT: New Customer
-    PROSPECT --> CUSTOMER: Full Customer
-    PROSPECT --> INVALID: Invalid Customer
+    PROMPT: Prompt
+    ADDITEM: Item added to bill
+    DISPLAYTOTAL: Total is displayed
+    [*] --> PROMPT: Program starts
+    PROMPT --> ADDITEM: User inputs Item SKU
+    ADDITEM --> PROMPT
+    PROMPT --> DISPLAYTOTAL: User inputs carriage return
+    DISPLAYTOTAL --> [*]: Program exits
 ```

@@ -15,3 +15,10 @@ Enter one and press return. You should see an OK message if the
 SKU has been recognised and you will be able to enter the next SKU.
 Once all items have been scanned just press the return key to
 see the total.
+
+```mermaid
+stateDiagram-v2
+    [*] --> PROSPECT: New Customer
+    PROSPECT --> CUSTOMER: Full Customer
+    PROSPECT --> INVALID: Invalid Customer
+```
